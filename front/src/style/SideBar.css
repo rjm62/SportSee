@@ -1,0 +1,49 @@
+.blackVerticalBand {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 117px;
+    height: 930px;
+    margin-top: -846px;
+    background-color: black;
+}
+
+.sportsIcons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+    margin: 0;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+.sportsIconsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 273px;
+    width: 64px;
+    height: 316px;
+}
+
+.copyrightContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 138px;
+    margin-bottom: 60px;
+    writing-mode: vertical-rl;
+}
+
+.copyrightText {
+    font-family: Roboto;
+    font-size: 12px;
+    transform: rotate(180deg);
+    color: #ffffff; 
+}
