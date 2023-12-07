@@ -59,11 +59,10 @@ function Dashboard() {
                 <div className='graphsTwoThreeFourContainer'> seconde partie</div>
             </div>  
             <section className='energiesContainer'>
-                <EnergyBurnedData value={userEnergies["calorieCount"]/1000 +"kcal"} color={"transparentRed"} energyType={"Calories"} energyIcon={energy} />
+                <EnergyBurnedData value={userEnergies["calorieCount"]+"kcal"} color={"transparentRed"} energyType={"Calories"} energyIcon={energy} />
                 <EnergyBurnedData value={userEnergies["proteinCount"]+"g"} color={"transparentBlue"} energyType={"Proteines"}  energyIcon={chicken}/>
                 <EnergyBurnedData value={userEnergies["carbohydrateCount"]+"g"} color={"transparentYellow"} energyType={"Glucides"} energyIcon={apple} />
                 <EnergyBurnedData value={userEnergies["lipidCount"]+"g"} color={"transparentRed"} energyType={"Lipides"} energyIcon={cheeseburger} />                     
-                <p>BONJOUR</p>
             </section>     
         </div>
       </main>

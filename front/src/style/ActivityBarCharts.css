@@ -1,14 +1,18 @@
 .tooltipContainer {
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 37px;
-    height: 60px;
+    width: 55px;
+    height: 80px;
     margin-left: 30px;
     font-family: "Roboto";
     font-weight: 500;
-    font-size: 8px;
-    background-color:#E60000;
+    background-color:green;
     color:#ffffff
+}
+
+.tooltipContainer p {
+    font-size: 11px;
 }
