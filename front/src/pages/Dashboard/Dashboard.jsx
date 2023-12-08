@@ -33,11 +33,12 @@ function Dashboard() {
             }
         } 
     
-        for(let i=0; i<USER_MAIN_DATA.length; i++) {
+        for( let i=0; i<USER_MAIN_DATA.length; i++) {
             if(USER_MAIN_DATA[i].userInfos.firstName.toLowerCase().trim()===stringreceived) {
                 setFirstNameId(i)
                 setUserEnergies(USER_MAIN_DATA[i]["keyData"])
-                console.log(userEnergies)
+                console.log(i)
+                
             }
         }
     }
@@ -54,7 +55,7 @@ function Dashboard() {
         <div className='activityAndEnergyContainer'>
             <div className='activityContainer'> 
                 <div className='ActivityBarCharts'>
-                    <ActivityBarCharts />
+                    <ActivityBarCharts user = {firstNameId}/>
                 </div>
                 <div className='graphsTwoThreeFourContainer'> seconde partie</div>
             </div>  

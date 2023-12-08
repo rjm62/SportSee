@@ -26,14 +26,15 @@ const CustomTooltip = ({ active, payload }) => {
   return null;
 };
 
-function ActivityBarCharts() {
-  console.log(USER_ACTIVITY[0].sessions)
+function ActivityBarCharts({user}) {
+  console.log(USER_ACTIVITY[user].sessions)
+  console.log(user)
   return (
     <ResponsiveContainer  width="100%" height={300} >
     <BarChart
       width={800}
       height={140}
-      data={USER_ACTIVITY[0].sessions}
+      data={USER_ACTIVITY[user].sessions}
       margin={{
         top: 25,
         right: 20,
