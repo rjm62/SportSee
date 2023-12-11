@@ -16,7 +16,7 @@
   },
   "scripts": {
     "dev": "node_modules/.bin/nodemon app/index.js",
-    "start": "set PORT=3006 && react-scripts start",
+    "start": "set PORT=3000 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

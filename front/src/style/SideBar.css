@@ -3,9 +3,9 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 117px;
-    height: 930px;
-    margin-top: -846px;
+    width: 84px;
+    height: 755px;
+    margin-top: -758px;
     background-color: black;
 }
 
@@ -13,8 +13,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 64px;
-    height: 64px;
+    width: 46px;
+    height: 46px;
     margin: 0;
     border-radius: 5px;
     background-color: #ffffff;
@@ -25,9 +25,9 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin-top: 273px;
+    margin-top: 237px;
     width: 64px;
-    height: 316px;
+    height: 236px;
 }
 
 .copyrightContainer {
@@ -37,7 +37,7 @@
     align-items: center;
     width: 24px;
     height: 138px;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     writing-mode: vertical-rl;
 }
 

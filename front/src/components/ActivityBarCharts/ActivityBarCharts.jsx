@@ -27,29 +27,53 @@ const CustomTooltip = ({ active, payload }) => {
 };
 
 function ActivityBarCharts({user}) {
-  console.log(USER_ACTIVITY[user].sessions)
-  console.log(user)
+  const daysNumbers = () => {
+    return USER_ACTIVITY[user].sessions.map((session, index) => index + 1);
+   }
   return (
-    <ResponsiveContainer  width="100%" height={300} >
+    <ResponsiveContainer  width="100%" height={230} >
     <BarChart
-      width={800}
-      height={140}
+      width={1600}
+      height={90}
       data={USER_ACTIVITY[user].sessions}
       margin={{
         top: 25,
-        right: 20,
+        right: 40,
         left: 0,
         bottom: 12
       }}
-      barCategoryGap={"30"}
+      barCategoryGap={"13"}
       maxBarSize={8}
       barGap={"-6"}
+      padding={{Right: 20}}
     >
       <CartesianGrid strokeDasharray="3 1" vertical={false} />
-      <XAxis dataKey='day'   padding={{ left: 10, right: 10 }} tickLine={false} tickMargin={15} />
-      <YAxis
-      orientation='right' tickCount={3} tickLine={false} axisLine={false} tickMargin={35}
+      <XAxis dataKey= {daysNumbers}  padding={{ left: -20, right: -30 }} tickLine={false} tickMargin={15} />
+      {/* <YAxis 
+      orientation='right' tickCount={3} tickLine={false} axisLine={false} tickMargin={35} 
       />
+       */}
+
+
+
+<YAxis
+            dataKey="kilogram"
+            domain={["dataMin - 2", "dataMax + 1"]}
+            allowDecimals={false}
+            dx={48}
+            orientation="right"
+            axisLine={false}
+            tickLine={false}
+          />
+          <YAxis
+            // yAxisId="cal"
+            dataKey="calories"
+            // domain={["dataMin -30", "dataMax + 50"]}
+            hide={true}
+          />
+
+
+
 
       <Tooltip 
     content={CustomTooltip}
@@ -79,6 +103,5 @@ function ActivityBarCharts({user}) {
     </ResponsiveContainer>
   );
 }
-
 
 export default ActivityBarCharts

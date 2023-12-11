@@ -1,9 +1,11 @@
 import {useState} from 'react'
+
+import { useContext } from 'react'
+import {DataContext}  from '../../utils/Context/DataContext'
 import ActivityBarCharts from '../../components/ActivityBarCharts/ActivityBarCharts'
 import EnergyBurnedData from '../../components/EnergyBurnedData/EnergyBurnedData'
 import UserSwitch from '../../components/UserSwitch/UserSwitch'
 import felicitations from '../../assets/pictures/felicitations.png'
-import {USER_MAIN_DATA} from '../../data/dataMocked'
 import energy from '../../assets/pictures/energy.svg'
 import chicken from '../../assets/pictures/chicken.svg'
 import apple from '../../assets/pictures/apple.svg'
@@ -11,10 +13,15 @@ import cheeseburger from '../../assets/pictures/cheeseburger.svg'
 import '../../style/Dashboard.css'
 
 function Dashboard() {
+    const {userData, activityData, averageSessionsData} = useContext(DataContext)
     //state pour récupérer le prénom
     const [firstName, setFirstName] = useState("Karl")
     const [firstNameId, setFirstNameId] = useState("0")
-    const [userEnergies, setUserEnergies] = useState(USER_MAIN_DATA[firstNameId]["keyData"])
+    const [userEnergies, setUserEnergies] = useState(userData[firstNameId]["keyData"])
+    const [comment, setComment] = useState(felicitations)
+
+  
+
 
     //fonction pour récupérer le prénom dans l'enfant userSwitch
     const firstNameChange = (newFirstName) => {
@@ -33,12 +40,12 @@ function Dashboard() {
             }
         } 
     
-        for( let i=0; i<USER_MAIN_DATA.length; i++) {
-            if(USER_MAIN_DATA[i].userInfos.firstName.toLowerCase().trim()===stringreceived) {
+        for( let i=0; i<userData.length; i++) {
+            if(userData[i].userInfos.firstName.toLowerCase().trim()===stringreceived) {
                 setFirstNameId(i)
-                setUserEnergies(USER_MAIN_DATA[i]["keyData"])
+                setUserEnergies(userData[i]["keyData"])
                 console.log(i)
-                
+                setComment(felicitations)           
             }
         }
     }
@@ -48,7 +55,8 @@ function Dashboard() {
         <div className='userChoiceAndCommentContainer'>
             <div className='commentContainer'>
                 <h1>Bonjour <strong>{firstName}</strong></h1>
-                <img src={felicitations} alt="texte de félicitations"/>
+                <img src ={comment} alt="texte de félicitations"/>
+                {/* <h2> Bonjour, désolé le prénom est inconnu de SportSee</h2> */}
             </div>
             <UserSwitch buttonText='Choix utilisateur' recoveryInChild={firstNameChange} champText="Entrez votre prénom"/>
         </div>

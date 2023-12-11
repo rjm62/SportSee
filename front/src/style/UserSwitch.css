@@ -1,7 +1,7 @@
 .userChoiceContainer {
     display: flex;
-    width: 180px;
-    height: 89px;
+    width: 140px;
+    height: 80px;
     margin-right: 45px;
     border-radius: 10px;
     box-shadow: 5px 5px 5px grey;
@@ -69,8 +69,8 @@
 .containerStyle {
     background-color: #E60000;
     color: #ffffff;
-    font-size: 18px;
-    padding: 3px 8px;
+    font-size: 13px;
+    padding: 3px 6px;
     border-radius: 15px;
     cursor: pointer;
 }
