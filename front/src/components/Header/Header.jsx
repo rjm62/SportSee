@@ -1,6 +1,8 @@
 import {useState} from 'react'
 import {NavLink} from 'react-router-dom'
 import '../../style/Header.css'
+import {useContext} from 'react'
+import {DataContext} from '../../utils/Context/DataContext'
 import logoFirstPart from'../../assets/pictures/logoFirstPart.png'
 import logoSecondPart from'../../assets/pictures/logoSecondPart.png'
 
@@ -11,6 +13,8 @@ function Header() {
     const [settingForm, setSettingForm] =  useState(["formContainer close"])
     const [APIChoice, setAPIChoice] = useState(false)
     const [mockedChoice, setMockedChoice] = useState(true)
+    const {choosenData, setChoosenData}= useContext(DataContext)
+    console.log(choosenData)
 
     const handleChangeData = (event) => {
         event.preventDefault()
@@ -26,7 +30,9 @@ function Header() {
     const onChangeValue = (event) => {
         setAPIChoice(!APIChoice)
         setMockedChoice(!mockedChoice)
-        console.log(event.target.value)
+        setChoosenData(event.target.value)
+      
+        
     }
 
 

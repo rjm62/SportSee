@@ -1,6 +1,7 @@
 * {
     padding: 0;
     box-sizing: border-box;
+    margin: auto;
 }
 
 
@@ -26,6 +27,9 @@
 
 .logoFirstPartContainer {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    
     width: 43px;
     height: 43px;
     border-radius: 50%;
@@ -59,8 +63,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70px;
-    height: 60px;
+    /* width: 70px;
+    height: 6px; */
     font-family: "Roboto";
     font-size: 16px;
     cursor: pointer;
@@ -78,8 +82,8 @@
 
 .formContainer {
     position: absolute;
-    top: -25px;
-    left: 500px;
+    top: 25px;
+    left: 670px;
     width: 303px;
     height: 30px;
     padding-top: 3px;

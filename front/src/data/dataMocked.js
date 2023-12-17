@@ -1,10 +1,10 @@
 const USER_MAIN_DATA = [
     {
-        id: 12,
+        id: 25,
         userInfos: {
-            firstName: 'Karl',
+            firstName: 'Apolline',
             lastName: 'Dovineau',
-            age: 31,
+            age: 10,
         },
         todayScore: 0.12,
         keyData: {
@@ -15,13 +15,13 @@ const USER_MAIN_DATA = [
         }
     },
     {
-        id: 18,
+        id: 26,
         userInfos: {
-            firstName: 'Cecilia',
+            firstName: 'Guilhem',
             lastName: 'Ratorez',
-            age: 34,
+            age: 16,
         },
-        score: 0.3,
+        todayScore: 0.3,
         keyData: {
             calorieCount: 2500,
             proteinCount: 90,
@@ -33,82 +33,82 @@ const USER_MAIN_DATA = [
 
 const USER_ACTIVITY = [
     {
-        userId: 12,
+        userId: 25,
         sessions: [
             {
                 day: '2020-07-01',
-                kilogram: 80,
-                calories: 280
+                kilogram: 32,
+                calories: 180
             },
             {
                 day: '2020-07-02',
-                kilogram: 80,
-                calories: 220
+                kilogram: 32,
+                calories: 120
             },
             {
                 day: '2020-07-03',
-                kilogram: 81,
-                calories: 280
+                kilogram: 30,
+                calories: 180
             },
             {
                 day: '2020-07-04',
-                kilogram: 81,
-                calories: 290
+                kilogram: 29,
+                calories: 190
             },
             {
                 day: '2020-07-05',
-                kilogram: 80,
-                calories: 160
+                kilogram: 31,
+                calories: 120
             },
             {
                 day: '2020-07-06',
-                kilogram: 78,
-                calories: 162
+                kilogram: 30,
+                calories: 142
             },
             {
                 day: '2020-07-07',
-                kilogram: 76,
-                calories: 390
+                kilogram: 31,
+                calories: 290
             }
         ]
     },
     {
-        userId: 18,
+        userId: 26,
         sessions: [
             {
                 day: '2020-07-01',
-                kilogram: 70,
-                calories: 240
+                kilogram: 56,
+                calories: 200
             },
             {
                 day: '2020-07-02',
-                kilogram: 69,
-                calories: 220
+                kilogram: 55,
+                calories: 180
             },
             {
                 day: '2020-07-03',
-                kilogram: 70,
-                calories: 280
+                kilogram: 55,
+                calories: 200
             },
             {
                 day: '2020-07-04',
-                kilogram: 70,
-                calories: 500
+                kilogram: 54,
+                calories: 220
             },
             {
                 day: '2020-07-05',
-                kilogram: 69,
-                calories: 160
+                kilogram: 55,
+                calories: 360
             },
             {
                 day: '2020-07-06',
-                kilogram: 69,
-                calories: 162
+                kilogram: 56,
+                calories: 262
             },
             {
                 day: '2020-07-07',
-                kilogram: 69,
-                calories: 390
+                kilogram: 57,
+                calories: 190
             }
         ]
     }
@@ -117,7 +117,7 @@ const USER_ACTIVITY = [
 
 const USER_AVERAGE_SESSIONS = [
     {
-        userId: 12,
+        id: 25,
         sessions: [
             {
                 day: 1,
@@ -150,7 +150,7 @@ const USER_AVERAGE_SESSIONS = [
         ]
     },
     {
-        userId: 18,
+        id: 26,
         sessions: [
             {
                 day: 1,
@@ -187,7 +187,7 @@ const USER_AVERAGE_SESSIONS = [
 
 const USER_PERFORMANCE = [
     {
-        userId: 12,
+        id: 25,
         kind: {
             1: 'cardio',
             2: 'energy',
@@ -224,7 +224,7 @@ const USER_PERFORMANCE = [
         ]
     },
     {
-        userId: 18,
+        id: 26,
         kind: {
             1: 'cardio',
             2: 'energy',

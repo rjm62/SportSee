@@ -1,0 +1,27 @@
+.two {
+    border-radius: 5px;
+    background-color: #E60000;
+    color: white;
+}
+
+.titleContainer {
+    display: flex;
+    position:relative;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 20px;
+    padding-left: 20px;
+   margin-left: 20px;
+   background-color: aqua;
+}
+
+.title {
+   font-size: 30px;
+   font-weight: 500;
+   padding-left: 20px;
+   margin-left: 20px;
+   color: white;
+   background-color: aqua;
+}
