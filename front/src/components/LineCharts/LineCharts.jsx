@@ -9,100 +9,64 @@ import {
   Tooltip,
   Legend,
   ReferenceArea,
-  CustomTooltip
   } from "recharts";
 import '../../style/LineCharts.css'
 
-function LineCharts(user) {
-
-    const data = [
-        {
-          name: "L",
-          uv: 4000
-        },
-        {
-          name: "M",
-          uv: 3000
-        },
-        {
-          name: "M",
-          uv: 2000
-        },
-        {
-          name: "J",
-          uv: 2780
-        },
-        {
-          name: "V",
-          uv: 1890
-        },
-        {
-          name: "S",
-          uv: 2390
-        },
-        {
-          name: "D",
-          uv: 3490
-        }
-      ];
+const CustomTooltip = ({ active, payload }) => {
+  if (active) {
 
     return (
-      <ResponsiveContainer width="100%" height="100%"> 
-      
+      <div className="tooltipContainer3">
+        <p>{`${payload[0].value} min`}</p>
+      </div>
+    );
+  }
+  return null;
+};
+
+function LineCharts(user) {
+  let daysFirstLetter =["L", "M", "M", "J", "V", "S", "D"]
+
+  let newUserSessions = []
+
+  user.user.sessions.forEach((element, index) => {
+    const newObject = {
+      day: daysFirstLetter[index],
+      durée: element.sessionLength
+      }
+      newUserSessions.push(newObject)
+    })
+
+    return (
+      <ResponsiveContainer className="containerSize"> 
+      <div className="notation">
+        <p> Durée moyenne des sessions</p>
+      </div>
       <LineChart className="two" 
-        // width={500}
-        // height={200}
-        data={user.user.sessions}
-   
-        margin={{
-            top: 0,
-            right: 10,
-            left: 10,
-            bottom: 20
-        }}
-    >
-       < text className="title"
-        x={80}
-        y={-60} 
-        fill="white"
-        opacity={1}
-        >
-          Durée moyenne des
-           
-      </text>
-      <text className="title"
-        x={80}
-        y={-15} 
-        fill="white"
-        opacity={0.5}
-        >
-          sessions
-           
-      </text> 
+        data={newUserSessions}
+      >
 
       <CartesianGrid strokeDasharray="3 3" vertical={false} horizontal={false} height={80}                       />
-      <XAxis dataKey="day" 
+      <XAxis className=" letterSize" dataKey="day" 
       tickMargin={10}
       axisLine={false}
       tickLine={false}
       tick={{fill:"#ffffff", fillOpacity:"50%"}}
        />
       <YAxis hide={true}  domain={["dataMin -20", "dataMax + 50"]} />
-      <Tooltip cursor={{
+      <Tooltip  content={CustomTooltip} wrapperStyle={{ width: 90, height: 20, color:"black"}} cursor={{ 
         stroke:'#000000',
-        strokeOpacity:'10%',
-        strockeWidth:'20%',
-        height:'100%'
+        strokeOpacity:'60%',
+        strockeWidth:'60%',
+        height:'100%',
       }}/>
       <Legend />
-    
-      <ReferenceArea x1={50}  stroke="red" strokeOpacity={0.9} />
-      <Line
-        type="monotone"
-        dataKey="sessionLength"
-        stroke="#ffffff"
+      <ReferenceArea className= "essai" x1={6} x2={4}  y1={-60}  y2={150} stroke="red" strokeOpacity={0.1}  ifOverflow="visible" />
+      <Line className="essai" 
+        type="natural"
+        dataKey="durée"
+        stroke="white"
         opacity="50%"
-        // activeDot={{ r: 8 }}
         dot={false}
         legendType="none"
       />

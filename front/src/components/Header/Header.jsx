@@ -9,6 +9,7 @@ import logoSecondPart from'../../assets/pictures/logoSecondPart.png'
 
 
 function Header() {
+    const {index, setIndex} =useContext(DataContext)
     const [setting, setSetting] = useState(["settingContainer text"])
     const [settingForm, setSettingForm] =  useState(["formContainer close"])
     const [APIChoice, setAPIChoice] = useState(false)
@@ -28,21 +29,17 @@ function Header() {
     }
 
     const onChangeValue = (event) => {
+        if(APIChoice==="API") {
+            setIndex("0")
+        }
         setAPIChoice(!APIChoice)
         setMockedChoice(!mockedChoice)
         setChoosenData(event.target.value)
+
+        setIndex("0")
       
         
     }
-
-
-    // const onChangeValue = (event.target.value) => {
-    //     for (let i=0; i< radio.length; i++) {
-    //         if(radio[i].checked) {
-    //             alert(radio[i].value)
-    //         }
-    //     }
-    // }
 
     return (
         <div className='blackHorizontalBand'>

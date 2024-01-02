@@ -37,12 +37,12 @@
     /* background-color: aqua; */
 }
 
-.commentContainer {
+.firstNameAndCommentContainer {
     display: flex;
     flex-direction:column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
-    width: 414px;
+    width: 530px;
     min-height: 105px;
     height: auto;
     /* background-color: orange; */
@@ -68,6 +68,29 @@ p {
     font-family: "Roboto";
     font-size: 18.3px;
     /* background-color: blue; */
+}
+
+.comment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    /* background-color: green; */
+}
+
+.comment img {
+    width: 8%;
+    height: auto;
+    padding-bottom: 8px;
+    margin-right: 100px;
+}
+
+.on {
+ display: flex;
+}
+
+.off {
+    display: none;
 }
 
 .activityAndEnergyContainer {
@@ -130,8 +153,8 @@ p {
     display: flex;
     position: relative;
     margin: 0;
-    width: 184px;
-    height: 200px;
+    width: 186px;
+    height: 186px;
     /* background-color: beige; */
 }
 

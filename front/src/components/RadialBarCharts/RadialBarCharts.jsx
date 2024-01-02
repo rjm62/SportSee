@@ -3,7 +3,7 @@ import { RadialBarChart, RadialBar, Legend} from "recharts";
 import '../../style/RadialBarCharts.css'
 
 function RadialBarCharts(user) {
-  let score = 230 - 390*(user.user.todayScore)
+  let score = 230 - 390*(user.user.todayScore) || 230 - 390*(user.user.score)
     const data = [ 
         {
           uv: 8.22,
@@ -20,7 +20,7 @@ function RadialBarCharts(user) {
     return (
     <RadialBarChart 
         width={490}
-        height={290}
+        height={270}
         cx={242}
         cy={25}
         innerRadius={150}
@@ -44,7 +44,7 @@ function RadialBarCharts(user) {
             iconSize={0}
             wrapperStyle={style}
         /> */}
-         <text dx={70} dy={-150} width={400} fontSize={30} fill='black' fontWeight={500}>
+         <text dx={70} dy={-180} width={400} fontSize={30} fill='black' fontWeight={500}>
             Score
       </text>
         </RadialBarChart>

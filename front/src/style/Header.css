@@ -20,7 +20,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 125px;
+    width: 130px;
     height: auto;
     margin-left: 25px;
 }
@@ -28,8 +28,7 @@
 .logoFirstPartContainer {
     display: flex;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center;   
     width: 43px;
     height: 43px;
     border-radius: 50%;
@@ -37,8 +36,14 @@
     background-color: #ff0101;
 }
 
+.logoFirstPartContainer img {
+    width: 100%;
+    height: auto;
+   
+}
+
 .logoText {
-    width: 78px;
+    width: 82px;
     margin-left: 5px;
 }
 

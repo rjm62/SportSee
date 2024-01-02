@@ -1,7 +1,40 @@
 .two {
+    display: flex;
     border-radius: 5px;
+    padding-right: 0;
+    margin-right: 0;
     background-color: #E60000;
-    color: white;
+    color: black;
+}
+
+.containerSize {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width:100% ;
+    height:100%;
+}
+
+.notation {
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    top:0px;
+    left:20px;
+    width: 60%;
+    height: 30%;
+}
+
+.notation p {
+    font-size: 11px;
+    color: #ffffff;
+    opacity: 0.5;
+}
+
+.letterSize {
+    font-size: 11px;
+    
 }
 
 .titleContainer {
@@ -25,3 +58,39 @@
    color: white;
    background-color: aqua;
 }
+
+.cursor {
+    display: flex;
+    width: 30px;
+    height: 100%;
+    position: absolute;
+    z-index:4;
+    top: 0;
+    left:0;
+    color:black;
+}
+
+
+.tooltipContainer3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 55px;
+    height: 40px;
+    margin-left: 30px;
+    font-family: "Roboto";
+    font-weight: 500;
+    background-color: white;
+}
+
+.tooltipContainer3 p {
+    font-size: 11px;
+}
+
+.essai {
+    display: flex;
+    width: 20px;
+    height: auto;
+}
+
