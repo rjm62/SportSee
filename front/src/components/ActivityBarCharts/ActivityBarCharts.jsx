@@ -101,8 +101,8 @@ function ActivityBarCharts({user}) {
         legendType="cercle" 
         name="&nbsp;Poids(kg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" 
         radius={[10, 10, 0, 0]} 
-        isAnimationActive={true} 
-        animationDuring={2500}
+        // isAnimationActive={true} 
+        // animationDuring={2500}
         />
 
         <Bar 

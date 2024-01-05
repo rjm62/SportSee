@@ -17,7 +17,7 @@ import '../../style/Dashboard.css'
 
 function Dashboard() {
     const {userData, activityData, averageSessionsData, performanceData} = useContext(DataContext)
-    const [firstNameId, setFirstNameId] = useState(0)
+    const [firstNameId, setFirstNameId] = useState("")
     const {index, setIndex} = useContext(DataContext)
     const [userEnergies, setUserEnergies] = useState(userData[index].keyData)
     const [visibility, setVisibility] = useState("on")
@@ -26,16 +26,21 @@ function Dashboard() {
     const{comment, setComment} = useContext(DataContext)
     // const [score, setScore] = useState(userData[index].todayScore )
     const score = (userData[index].todayScore)*100 || (userData[index].score)*100 
+    const [choice, setChoice] = useState(userData[index].userInfos.firstName)
 
-   
     // {score === undefined ? setScore(userData[index].score) : setScore(score)}
  
     //fonction pour récupérer le prénom dans l'enfant userSwitch
     const firstNameChange = (newVisibility) => {
-        console.log(newVisibility)
         newVisibility=== "off" ? setVisibility("off"): setVisibility("on")
     }
 
+    const display = (newDisplay) => {
+        newDisplay ==="yes" ? setFirstName(userData[index].userInfos.firstName) : setFirstName("")
+
+    }
+
+   
     return (
         <main className='mainContainer'>
         <SideBar /> 

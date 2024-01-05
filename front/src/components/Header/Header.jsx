@@ -15,6 +15,7 @@ function Header() {
     const [APIChoice, setAPIChoice] = useState(false)
     const [mockedChoice, setMockedChoice] = useState(true)
     const {choosenData, setChoosenData}= useContext(DataContext)
+    const {firstName, setFirstName} = useContext(DataContext)
     console.log(choosenData)
 
     const handleChangeData = (event) => {
@@ -31,10 +32,13 @@ function Header() {
     const onChangeValue = (event) => {
         if(APIChoice==="API") {
             setIndex("0")
+            setFirstName("Karl")
         }
         setAPIChoice(!APIChoice)
         setMockedChoice(!mockedChoice)
         setChoosenData(event.target.value)
+        window.localStorage.setItem("userId", "12")
+        
 
         setIndex("0")
       
