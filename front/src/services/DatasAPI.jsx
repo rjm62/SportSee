@@ -6,8 +6,8 @@ export const getUserFetchData = async() => {
   
       // Récupérer les données 'data' si elles existent
       if (data && data.data) {
-        const tableauDeDonnees = [data.data];
-        return tableauDeDonnees
+        const dataArray = [data.data];
+        return dataArray
       }
     }
     
@@ -24,8 +24,8 @@ export const getUserFetchData = async() => {
       const data = await response.json();
   
       if (data && data.data) {
-        const tableauDeDonnees = [data.data];
-        return tableauDeDonnees
+        const dataArray = [data.data];
+        return dataArray
       }
     }
 
@@ -41,8 +41,8 @@ export const getUserFetchData = async() => {
       const data = await response.json();
   
       if (data && data.data) {
-        const tableauDeDonnees = [data.data];
-        return tableauDeDonnees
+        const dataArray = [data.data];
+        return dataArray
       }
     } 
     
@@ -59,8 +59,8 @@ export const getUserFetchData = async() => {
       const data = await response.json();
   
       if (data && data.data) {
-        const tableauDeDonnees = [data.data];
-        return tableauDeDonnees
+        const dataArray = [data.data];
+        return dataArray
       }
     } 
 

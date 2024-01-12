@@ -18,25 +18,11 @@ export const DataContext = createContext();
 
     useEffect(() => { 
         setAPError(false)
-        
         getUserFetchData().then((data) =>  (data)=== "error" || choosenData=== "dataMocked" ? (setUserData(USER_MAIN_DATA), setChoosenData("dataMocked")): (setUserData(data), setFirstName(data[0].userInfos.firstName)) )
         getActivityFetchData().then((data) => (data)=== "error" || choosenData=== "dataMocked" ? (setActivityData(USER_ACTIVITY), setChoosenData("dataMocked") ): (setActivityData(data)))
         getAverageSessionsFetchData().then((data) => (data)=== "error" || choosenData=== "dataMocked" ? (setAverageSessionsData(USER_AVERAGE_SESSIONS), setChoosenData("dataMocked")) : setAverageSessionsData(data));   
         getPerformanceFetchData().then((data) => (data)=== "error" || choosenData=== "dataMocked"   ? (setPerformanceData(USER_PERFORMANCE), setChoosenData("dataMocked")) : setPerformanceData(data));  
-        // if (choosenData==="API") {
-            getPerformanceFetchData().then((data) => (data)==="error" ? setAPError(true) : setAPError(false))
-            // getAverageSessionsFetchData().then((data) => (data)==="error" ? setAPError(true) : setAPError(false))
-            // getActivityFetchData().then((data) => (data)==="error" ? setAPError(true) : setAPError(false))
-            // getUserFetchData().then((data) => (data)==="error" ? setAPError(true) : setAPError(false))
-
-            // getUserFetchData().then((data) => (data)==="error") && getActivityFetchData().then((data) => (data)==="error") && getAverageSessionsFetchData().then((data) => (data)==="error") && getPerformanceFetchData().then((data) => (data)==="error") ? setAPError(true) : setAPError(false)
-        // }
-        
-        // if (choosenData==="dataMocked") {
-        //     setAPError(false)              
-        // }   
-        
-        
+        getPerformanceFetchData().then((data) => (data)==="error" ? setAPError(true) : setAPError(false))         
     }, [choosenData, firstName]); 
 
     return (

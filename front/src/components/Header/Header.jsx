@@ -15,7 +15,6 @@ function Header() {
     const [mockedChoice, setMockedChoice] = useState(false)
     const {choosenData, setChoosenData}= useContext(DataContext)
     const {firstName, setFirstName} = useContext(DataContext)
-    // const {firstName, setFirstName} = useContext(DataContext)
     const [visibilityError, setVisibilityError] = useState("errorContainer close")
     const {APError} = useContext(DataContext)
     const {comment, setComment} = useContext(DataContext)
@@ -24,22 +23,10 @@ function Header() {
 
 
 useEffect(() => {
-    // choosenData==="dataMocked" ? setAlertDisplay(false) :setAlertDisplay(APError)
-    // console.log(choosenData)
-    // console.log(APIChoice)
-   
     choosenData==="dataMocked" && APIChoice=== true ? alert("Désolé nous rencontrons un problème de connexion à l'API , vous allez être redirigé sur les données mockées"): console.log("RIEN")
-    
-   choosenData==="dataMocked" && APIChoice=== true ? setFirstName("Apolline") : console.log("RIEN")
+    choosenData==="dataMocked" && APIChoice=== true ? setFirstName("Apolline") : console.log("RIEN")
     choosenData==="dataMocked" ? setAPIChoice(false) : setAPIChoice(true)
     choosenData==="API" ? setMockedChoice(false) : setMockedChoice(true)
-    
-    // alertDisplay === true ? alert("Désolé nous rencontrons un problème de connexion à l'API , vous allez être redirigé sur les données mockées"): setVisibilityError(["errorContainer close"])
-    // setAlertDisplay(!alertDisplay)
-    // }
-    // if(choosenData==="dataMocked") {
-    //     setAlertDisplay(false)
-    
     },[choosenData, APError])
 
 
@@ -58,18 +45,14 @@ useEffect(() => {
         if(APIChoice==="API") {
             setIndex("0")
         }
-        setAPIChoice(!APIChoice)
 
+        setAPIChoice(!APIChoice)
         setMockedChoice(!mockedChoice)
         setChoosenData(event.target.value)
         window.localStorage.setItem("userId", "12")
         choosenData=== "dataMocked" ? setFirstName("Karl") :  setFirstName("Apolline") 
         setComment("Félicitations ! vous avez explosé vos objectifs hier") 
-        
-
-        setIndex("0")
-      
-        
+        setIndex("0")    
     }
    
 
