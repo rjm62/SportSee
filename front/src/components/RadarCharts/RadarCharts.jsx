@@ -30,11 +30,11 @@ let frenchKindArray =[]   // tableau vide des activités en français
 
 // fonction forEach pour parcourir les éléments du tableau et traduire les mots en francais
 englandKindArray.forEach((element,index) => {
-  let j=0
+  // let j=0
   for(let i=0; i<translateText.length; i++) {
     if(element=== translateText[i].englishText) {
       frenchKindArray.push(translateText[i].frenchText)   //remplissage du tableau   
-      j=1
+      // j=1
     }
   }  
 })

@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import { useContext } from 'react'
 import {DataContext}  from '../../utils/Context/DataContext'
 import SideBar from '../../components/SideBar/SideBar';
@@ -17,40 +17,39 @@ import '../../style/Dashboard.css'
 
 function Dashboard() {
     const {userData, activityData, averageSessionsData, performanceData} = useContext(DataContext)
-    const [firstNameId, setFirstNameId] = useState("")
-    const {index, setIndex} = useContext(DataContext)
-    const [userEnergies, setUserEnergies] = useState(userData[index].keyData)
+    const {index} = useContext(DataContext)
     const [visibility, setVisibility] = useState("on")
-    const {usersId, setUsersId}= useContext(DataContext)
-    const {firstName, setFirstName} = useContext(DataContext)
-    const{comment, setComment} = useContext(DataContext)
-    // const [score, setScore] = useState(userData[index].todayScore )
+    const {firstName} = useContext(DataContext)
+    const{comment} = useContext(DataContext)
+    const{choosenData} = useContext(DataContext)
     const score = (userData[index].todayScore)*100 || (userData[index].score)*100 
-    const [choice, setChoice] = useState(userData[index].userInfos.firstName)
-
-    // {score === undefined ? setScore(userData[index].score) : setScore(score)}
- 
-    //fonction pour récupérer le prénom dans l'enfant userSwitch
     const firstNameChange = (newVisibility) => {
         newVisibility=== "off" ? setVisibility("off"): setVisibility("on")
     }
 
-    const display = (newDisplay) => {
-        newDisplay ==="yes" ? setFirstName(userData[index].userInfos.firstName) : setFirstName("")
+    useEffect(() => {
+        setVisibility("on")
+    }, [choosenData])
 
+    //changement du point en virgule dans la valeur des calories brulées
+    const PointVirguleChange = (number) =>{
+        number = number.replace(".",",")
+        return number
     }
 
-   
+
+
     return (
         <main className='mainContainer'>
         <SideBar /> 
         <div className='articleContainer'>
             <div className='userChoiceAndCommentContainer'>
                 <div className='firstNameAndCommentContainer'>
-                    <h1>Bonjour <strong>{firstName}</strong></h1>
+                    {visibility==="off" && comment!=="Félicitations ! vous avez explosé vos objectifs hier"? <h1>Bonjour</h1> :
+                    <h1>Bonjour <strong>{firstName}</strong></h1> }
                     <div className='comment'>
                         <h4>{comment}</h4>
-                        <img className={visibility} src={felicitations} alt="applaudissements" />
+                        {comment==="Félicitations ! vous avez explosé vos objectifs hier" ? <img  className="on"  src={felicitations} alt="applaudissements" /> : console.log("rien")}
                     </div>
                 </div>
             <UserSwitch buttonText='Choix utilisateur' recoveryInChild={firstNameChange}  champText="Entrez votre prénom"/>
@@ -77,7 +76,7 @@ function Dashboard() {
                     </div>
                 </div>  
                 <section className='energiesContainer'>
-                    <EnergyBurnedData value={userData[index].keyData.calorieCount+"kcal"} color={"transparentRed"} energyType={"Calories"} energyIcon={energy} />
+                    <EnergyBurnedData value={PointVirguleChange(userData[index].keyData.calorieCount/1000+"kcal")} color={"transparentRed"} energyType={"Calories"} energyIcon={energy} />
                     <EnergyBurnedData value={userData[index].keyData.proteinCount+"g"} color={"transparentBlue"} energyType={"Proteines"}  energyIcon={chicken}/>
                     <EnergyBurnedData value={userData[index].keyData.carbohydrateCount+"g"} color={"transparentYellow"} energyType={"Glucides"} energyIcon={apple} />
                     <EnergyBurnedData value={userData[index].keyData.lipidCount+"g"} color={"transparentRed"} energyType={"Lipides"} energyIcon={cheeseburger} />                     
@@ -89,3 +88,16 @@ function Dashboard() {
 }
 
 export default Dashboard
+
+
+
+
+
+
+
+
+
+
+
+
+

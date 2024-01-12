@@ -3,7 +3,6 @@ import '../../style/UserSwitch.css'
 import { DataContext } from '../../utils/Context/DataContext'
 
 function UserSwitch({buttonText, champText, recoveryInChild, recoveryIsKnown}) {
-    const [userId, setUserId] = useState("")
     const [openContainerClassName, setOpenContainerClassName] = useState(['displayOpen','type', 'colorRed','true'])
     const [displayChoiceClassName, setDisplayChoiceClassName] = useState(['displayChoice', 'type','colorBlack','false'])
     const [newUser, setNewUser] = useState("")
@@ -14,9 +13,7 @@ function UserSwitch({buttonText, champText, recoveryInChild, recoveryIsKnown}) {
     const {usersId, setUsersId} = useContext(DataContext)
     const {index, setIndex} = useContext(DataContext)
     const[visibilityFelicitations, setVisibilityFelicitations] = useState("on")
-    const[toutou, setToutou] = useState("yes")
     recoveryInChild(visibilityFelicitations)
-    // recoveryIsKnown(toutou)
    
     const handleClickOpen = (event) => {
         event.preventDefault()
@@ -60,20 +57,18 @@ function UserSwitch({buttonText, champText, recoveryInChild, recoveryIsKnown}) {
             if(t===0) {
                 setComment("Désolé "+stringreceived.toUpperCase()+", vous ne faites pas  encore partie de nos adhérents") 
                 setFirstName("") 
-                setVisibilityFelicitations("off")  
-                setToutou("no")              
+                setVisibilityFelicitations("off")               
             } 
             
             if(t===1) {
                 setComment("Félicitations ! vous avez explosé vos objectifs hier")
                 setVisibilityFelicitations("on")
-                setToutou("yes")
             }
         }
 
         if(choosenData==="API") {
             const mainDataAPIList = [{id:12, userId:12, name:"Karl"}, {id:18, userId:18, name:"Cecilia"}]
-            var t=0;
+            t=0;
           
             for( let i=0; i<mainDataAPIList.length; i++) {
                 if(mainDataAPIList[i].name.toLowerCase().trim()===stringreceived && t===0) {
@@ -102,6 +97,7 @@ function UserSwitch({buttonText, champText, recoveryInChild, recoveryIsKnown}) {
     const handleChange = (event) => { 
         setNewUser(event.target.value);
     }
+    
 
     return (
         <div  className='userChoiceContainer'>

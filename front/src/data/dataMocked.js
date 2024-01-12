@@ -6,12 +6,12 @@ const USER_MAIN_DATA = [
             lastName: 'Dovineau',
             age: 10,
         },
-        todayScore: 0.12,
+        todayScore: 0.70,
         keyData: {
-            calorieCount: 1930,
-            proteinCount: 155,
-            carbohydrateCount: 290,
-            lipidCount: 50
+            calorieCount: 1700,
+            proteinCount: 135,
+            carbohydrateCount: 190,
+            lipidCount: 80
         }
     },
     {
@@ -21,12 +21,12 @@ const USER_MAIN_DATA = [
             lastName: 'Ratorez',
             age: 16,
         },
-        score: 0.3,
+        score: 0.85,
         keyData: {
-            calorieCount: 2500,
-            proteinCount: 90,
-            carbohydrateCount: 150,
-            lipidCount: 120
+            calorieCount: 3750,
+            proteinCount: 95,
+            carbohydrateCount: 280,
+            lipidCount: 160
         }
     }
 ]

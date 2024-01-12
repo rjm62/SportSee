@@ -3,7 +3,6 @@ import {DataContextProvider} from './utils/Context/DataContext'
 import './App.css';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Header from './components/Header/Header';
-import UserSwitch from './components/UserSwitch/UserSwitch'
 
 function App() {
   return (

@@ -93,16 +93,10 @@
     height: 30px;
     padding-top: 3px;
     padding-left: 5px;
-    margin-top: 45px;
+    margin-left: 20px;
+    margin-top: 95px;
     border-radius: 10px;
     background-color: #ff0101;
-}
-.close {
-    display: none;
-}
-
-.open {
-    display: flex;
 }
 
 label {
@@ -119,6 +113,31 @@ label {
     margin-bottom: 3px;
     color:#ffffff ;
     cursor: pointer;
+}
+
+.errorContainer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: auto;
+    margin-top: 62px;
+    padding: 10px;
+    margin-left: 80px;
+    color :#ff0101;
+    background-color: yellow;
+}
+
+.errorContainer p {
+    font-size: 16px;
+}
+
+.close {
+    display: none;
+}
+
+.open {
+    display: flex;
 }
 
  

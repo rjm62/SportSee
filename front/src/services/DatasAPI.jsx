@@ -1,4 +1,4 @@
-    export const getUserFetchData = async() => {
+export const getUserFetchData = async() => {
     try {
       const userId = localStorage.getItem("userId")
       const response = await fetch(`http://localhost:3000/user/${userId}`);
@@ -8,17 +8,11 @@
       if (data && data.data) {
         const tableauDeDonnees = [data.data];
         return tableauDeDonnees
-  
-      } else {
-        console.error("'data' est manquant dans la réponse de l'API");
-        // const kiki= ["error"]
-        // return kiki
       }
-    } catch (error) {
-      console.error('problème de connexion pour récupérer les données', error);
-      // alert("l'API ne réponds pas veuillez revenir en données mockés")
-      // const koko =["error"]
-      // return koko
+    }
+    
+    catch (error) {
+      return "error"
     }
   }
 
@@ -32,16 +26,11 @@
       if (data && data.data) {
         const tableauDeDonnees = [data.data];
         return tableauDeDonnees
-  
-      } else {
-        console.error("'data' est manquant dans la réponse de l'API");
-        const kiki= ["error"]
-        return kiki
       }
-    } catch (error) {
-      console.error('problème de connexion pour récupérer les données', error);
-      const koko =["error"]
-      return koko
+    }
+
+     catch (error) {
+      return "error"
     }
   }
 
@@ -54,16 +43,11 @@
       if (data && data.data) {
         const tableauDeDonnees = [data.data];
         return tableauDeDonnees
-  
-      } else {
-        console.error("'data' est manquant dans la réponse de l'API");
-        const kiki= ["error"]
-        return kiki
       }
-    } catch (error) {
-      console.error('problème de connexion pour récupérer les données', error);
-      const koko =["error"]
-      return koko
+    } 
+    
+    catch (error) {
+      return "error"
     }
   }
 
@@ -77,19 +61,16 @@
       if (data && data.data) {
         const tableauDeDonnees = [data.data];
         return tableauDeDonnees
-  
-      } else {
-        console.error("'data' est manquant dans la réponse de l'API");
-        const kiki= ["error"]
-        return kiki
       }
-    } catch (error) {
-      console.error('problème de connexion pour récupérer les données', error);
-      const koko =["error"]
-      return koko
+    } 
+
+    catch (error) {
+      return "error"
     }
   }
+
   
+    
 
    getUserFetchData()
    getActivityFetchData()

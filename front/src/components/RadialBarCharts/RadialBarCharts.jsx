@@ -1,5 +1,4 @@
-import react from 'react'
-import { RadialBarChart, RadialBar, Legend} from "recharts";
+import { RadialBarChart, RadialBar} from "recharts";
 import '../../style/RadialBarCharts.css'
 
 function RadialBarCharts(user) {
@@ -11,7 +10,7 @@ function RadialBarCharts(user) {
         }
       ];
       
-      const style = {
+      const style = {   // a supprimer si pas utilisé
         top: 0,
         left: 350,
         lineHeight: "24px"

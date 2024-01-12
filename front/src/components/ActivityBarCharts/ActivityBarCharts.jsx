@@ -1,6 +1,5 @@
 
 import React from "react";
-import {USER_ACTIVITY } from '../../data/dataMocked.js'
 import {
   BarChart,
   Bar,
