@@ -50,7 +50,8 @@ useEffect(() => {
         setMockedChoice(!mockedChoice)
         setChoosenData(event.target.value)
         window.localStorage.setItem("userId", "12")
-        choosenData=== "dataMocked" ? setFirstName("Karl") :  setFirstName("Apolline") 
+        // choosenData=== "dataMocked" ? setFirstName("Karl") :  setFirstName("Apolline") 
+        // choosenData!== "dataMocked" ? setFirstName("Apolline") :
         setComment("Félicitations ! vous avez explosé vos objectifs hier") 
         setIndex("0")    
     }

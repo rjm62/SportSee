@@ -22,7 +22,8 @@ export const DataContext = createContext();
         getActivityFetchData().then((data) => (data)=== "error" || choosenData=== "dataMocked" ? (setActivityData(USER_ACTIVITY), setChoosenData("dataMocked") ): (setActivityData(data)))
         getAverageSessionsFetchData().then((data) => (data)=== "error" || choosenData=== "dataMocked" ? (setAverageSessionsData(USER_AVERAGE_SESSIONS), setChoosenData("dataMocked")) : setAverageSessionsData(data));   
         getPerformanceFetchData().then((data) => (data)=== "error" || choosenData=== "dataMocked"   ? (setPerformanceData(USER_PERFORMANCE), setChoosenData("dataMocked")) : setPerformanceData(data));  
-        getPerformanceFetchData().then((data) => (data)==="error" ? setAPError(true) : setAPError(false))         
+        getPerformanceFetchData().then((data) => (data)==="error" ? setAPError(true) : setAPError(false)) 
+        getUserFetchData().then((data) =>  (data)!== "error" && choosenData=== "dataMocked" ? setFirstName(USER_MAIN_DATA[index].userInfos.firstName):console.log("rien"))        
     }, [choosenData, firstName]); 
 
     return (
